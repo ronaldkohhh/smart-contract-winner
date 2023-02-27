@@ -3,8 +3,9 @@ Your goal is simple! Emit the winner event on this smart contract on the Goerli 
 
 If you take a look at the Code tab in Etherscan, you'll see that the source code for this contract looks like this:
 
+```
 // SPDX-License-Identifier: Unlicense
-```pragma solidity ^0.8.0;
+pragma solidity ^0.8.0;
 
 contract Contract {
     event Winner(address);
@@ -23,7 +24,8 @@ We'll leave that challenge up to you!
 # Solution
 Create a simple contract and use it to make the attempt call to the Winner Contract through the interface.
 
-```interface WinnerContract {
+```
+interface WinnerContract {
     function attempt() external;
 }
 
@@ -34,7 +36,7 @@ contract EmitEvent {
 }
 ```
 
-Update deploy script to send a transaction to invoke the attempt method on the deployed contract.
+Update deploy.js script to send a transaction to invoke the attempt method on the deployed contract.
 
 ```
 const hre = require("hardhat");
