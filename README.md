@@ -14,11 +14,13 @@ contract Contract {
         emit Winner(msg.sender);
     }
 }
+
+
 How do we possibly make it so the tx.origin (the EOA who originated the transaction) is not equal to the msg.sender? 🤔
 
 We'll leave that challenge up to you!
 
-# Resolution
+# Solution
 Create a simple contract and use it to make the attempt call to the Winner Contract through the interface.
 
 interface WinnerContract {
@@ -30,6 +32,7 @@ contract EmitEvent {
         return WinnerContract(_contract).attempt();
     }
 }
+
 Update deploy script to send a transaction to invoke the attempt method on the deployed contract.
 
 const hre = require("hardhat");
